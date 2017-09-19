@@ -1,3 +1,6 @@
+//Alagba Blessing v223e376 Assingment 3
+//discription: get values till the user inpts 0 and finds the sum, average, minimum and maximum
+
 #include <iostream>
 using namespace std;
 
