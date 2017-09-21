@@ -22,14 +22,12 @@ int main()
     cout<< "Enter the number of dependants: \n";
     cin>> dependants;
 
+    GrossPay = HoursWorked*16.78;
+    
     if (HoursWorked > Hours)
     {
-      OvertimeRate = HoursWorked - Hours;
-      GrossPay = (Hours * 16.78) + (OvertimeRate * 1.5 * 16.78);
-    }
-    else
-    {
-      GrossPay = Hours * 16.78;
+        GrossPay += (HoursWorked-Hours)*(1.5*16.78)
+      
     }
     SocialSecurityTax = GrossPay * 0.06;
     FederalIncomeTax = GrossPay * 0.14;
