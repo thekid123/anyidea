@@ -10,7 +10,6 @@ int main()
   double SocialSecurityTax;
   double FederalIncomeTax;
   double StateIncomeTax;
-  double OvertimeRate;
   const int UnionDues = 10;
   double NetPay;
 
@@ -22,13 +21,17 @@ int main()
     cout<< "Enter the number of dependants: \n";
     cin>> dependants;
 
-    GrossPay = HoursWorked*16.78;
-    
-    if (HoursWorked > Hours)
-    {
-        GrossPay += (HoursWorked-Hours)*(1.5*16.78)
-      
+    if (HoursWorked > Hours) {   
+        double ExtraHours = (HoursWorked - Hours);
+       	GrossPay = (Hours*16.78)+(ExtraHours*1.5*16.78);
+                             }
+
+
+else{ 
+GrossPay = HoursWorked*16.78;
     }
+  
+  
     SocialSecurityTax = GrossPay * 0.06;
     FederalIncomeTax = GrossPay * 0.14;
     StateIncomeTax = GrossPay * 0.05;
