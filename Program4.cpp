@@ -1,9 +1,13 @@
+//Alagba Blessing, ID: v223e376
+//Assignment 4
+//Description: Calculating the Gross Pay for employee
+
 #include <iostream>
 using namespace std;
 
 int main()
 {
-  double Hours = 40;
+  double Hours = 40; //declaring variables
   double HoursWorked;
   double dependants;
   double GrossPay;
@@ -13,45 +17,47 @@ int main()
   const int UnionDues = 10;
   double NetPay;
 
-  cout<< "Enter the hours worked: \n";
+  cout<< "Enter the hours worked: "; //asking the user to enter the number of hours worked
   cin>> HoursWorked;
-
-  while (HoursWorked != 0)
+  cout<< endl;
+  
+  while (HoursWorked != 0) //using a while loop to test the condition for hours not = 0
   {
-    cout<< "Enter the number of dependants: \n";
+    cout<< "Enter the number of dependants: "; //user enters the number of dependants
     cin>> dependants;
-
-    if (HoursWorked > Hours) {   
+    cout<< endl;
+    
+    if (HoursWorked > Hours) {   //using an if statement to test if the hours worked is more than the hours
         double ExtraHours = (HoursWorked - Hours);
-       	GrossPay = (Hours*16.78)+(ExtraHours*1.5*16.78);
+       	GrossPay = (Hours*16.78)+(ExtraHours*1.5*16.78);  //calculates gross pay
                              }
 
 
-else{ 
+else{   //if hours worked is not greater than hours
 GrossPay = HoursWorked*16.78;
     }
   
   
-    SocialSecurityTax = GrossPay * 0.06;
+    SocialSecurityTax = GrossPay * 0.06;  //calculates the withheld amounts
     FederalIncomeTax = GrossPay * 0.14;
     StateIncomeTax = GrossPay * 0.05;
 
-    cout.setf(ios::fixed);
+    cout.setf(ios::fixed); //Magic Formula
     cout.setf(ios::showpoint);
     cout.precision(2);
 
-    cout<< "Gross Pay: " << GrossPay << endl;
+    cout<< "Gross Pay: " << GrossPay << endl;       //displaying the output
     cout<< "Social Security Tax Withheld: " << SocialSecurityTax << endl;
     cout<< "Federal Income Tax Withheld: " << FederalIncomeTax << endl;
     cout<< "State Income Tax Withheld: " << StateIncomeTax << endl;
     cout<< "Union Dues: " << UnionDues << endl;
 
-    if (dependants >= 3)
+    if (dependants >= 3)    //if the dependants is greater than or equal to 3
     {
-      float dependantRate = 35;
-      cout<< "Health Insurance is: 35 \n";
+      float dependantRate = 35; //an extra charge of $35 is applied
+      cout<< "Health Insurance is: 35 \n"; //displays the output
 
-      NetPay = GrossPay - (SocialSecurityTax + FederalIncomeTax + StateIncomeTax + UnionDues + dependantRate);
+      NetPay = GrossPay - (SocialSecurityTax + FederalIncomeTax + StateIncomeTax + UnionDues + dependantRate); //calculates the gross pay
       cout<< endl;
     }
     else
