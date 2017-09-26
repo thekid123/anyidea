@@ -19,15 +19,15 @@ int main()
     if ( y %100 == 0)   //the year entered by the user is also divided by 100 and gives no remainder
     {
       if ( y %400 == 0)   //the year entered by the user is also divided by 400 and it gives no remainder
-              cout<< year << "is a leap year. ";    //if it passes the conditon than it is a leap year
+              cout<< y << " is a leap year. ";    //if it passes the conditon than it is a leap year
       else
-              cout<< year << "is not a leap year. ";
+              cout<< y << " is not a leap year. ";
     }
     else
-        cout<< year << "is not a leap year. ";    //if it does not pass the condition it is not a leap year
+        cout<< y << " is not a leap year. ";    //if it does not pass the condition it is not a leap year
   }
   else
-      cout<< year << "is not a leap year. ";
+      cout<< y << " is not a leap year. ";
 
 cout<< endl;
 cout<< endl;
