@@ -38,7 +38,7 @@ cin>> y;
 }
 
 if (y < 1582)
-  cout<< y << "The number entered is less than 1582";
+  cout<< y << "The year entered is less than 1582";
 
 return 0;
 }
