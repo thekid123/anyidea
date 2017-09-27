@@ -37,5 +37,8 @@ cout<< "Enter any year >= 1582 to test for a leap year (a year == 0 will termina
 cin>> y;
 }
 
+if (y < 1582)
+  cout<< y << "The number entered is less than 1582";
+
 return 0;
 }
