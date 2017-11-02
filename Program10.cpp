@@ -1,4 +1,3 @@
-//Amey Shukla Q242G477
 //Program 10
 //Description: Gets the input amount in dollars and cents and convert them to respective quarters, dimes and pennies. 
 
