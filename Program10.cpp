@@ -1,25 +1,27 @@
+//Alagba Blessing ID:v223e376
 //Program 10
-//Description: Gets the input amount in dollars and cents and convert them to respective quarters, dimes and pennies. 
+//Description: Getting the amount in dollars and cents and converting them into quarters, dimes and pennys
 
 
 #include <iostream>
 using namespace std;
 
+//creating functions or declaring functions
 void introduction();
 void get_input(int &dollars, int &cents);
 bool check_input(int dollars, int cents);
 void determine_coins(int dollars, int cents, int &quarters, int &dimes, int &pennys);
 void display_output();
 
-int dollars, cents, quarters, dimes, pennys; //Global Variables, as they are used through out the program. 
-bool check; 
+int dollars, cents, quarters, dimes, pennys; //Global Variables, as they are used through out the program.
+bool check;
 
 int main() {
 	char choice = 'y';
 
-	void introduction();  
-	
-	while (choice == 'y') {     //The loop works works as long as the choice of character is y.
+	void introduction();
+
+	while (choice == 'y') {     //the loop continue to work if the user enters Y
 	get_input(dollars, cents);
         check_input(dollars, cents);
 		if (check == false) {
@@ -28,14 +30,15 @@ int main() {
 		}
 	display_output();
 	cout << "Do you have another amount? (Type y for yes or n for no): ";
-	cin >> choice; 
+	cin >> choice;
 	cout << endl;
 	}
-	return 0;   // Terminates the program in case user quits the loop succesfully. 
+	return 0;   // Terminates the program in case user quits the loop succesfully.
 }
 
+//Writing a condition for each function
 void introduction() {
- 	cout << "This Program will determne the coin change in quarters, dimes and pennies in your amount of money. (5 dollars or less)." 		<< endl;
+ 	cout << "This Program will determne the coin change in quarters, dimes and pennies in your amount of money. (5 dollars or less)." << endl;
 }
 
 void get_input(int &dollars, int &cents) {
@@ -57,36 +60,34 @@ bool check_input(int dollars, int cents) {
 	 	check = true;
 		return true;
 	}
-} 
+}
 
 void determine_coins(int dollars, int cents, int &quarters, int &dimes, int &pennys) {
 	int total = (dollars * 100)+cents;  // Converts the money to cents.
 	quarters = total/25;                // Converts the dollar to quarters
 	total = total - (25*quarters);      // Subtracts the amount of money already converted.
-	dimes = (total/10);		    // Converts money left to dimes.	
-	total = total - (dimes*10); 	    // Subtracts the money left.				
-	pennys = total;			    // The left amount is assigned as pennies.	
+	dimes = (total/10);		    // Converts money left to dimes.
+	total = total - (dimes*10); 	    // Subtracts the money left.
+	pennys = total;			    // The left amount is assigned as pennies.
 }
 
 void display_output(void) {
         if (dollars > 0)
 		cout << dollars << " dollar(s) and " << cents << " cent(s) can be given as: " << endl;
-	else 
+	else
 		cout << cents << " cents can be given as: " << endl;
 
-// A series of if else statements according to amount of quarters, dimes and pennies. 
+// A series of if else statements according to amount of quarters, dimes and pennies.
 
-        if (quarters > 0 && dimes > 0 && pennys > 0) 
+        if (quarters > 0 && dimes > 0 && pennys > 0)
 		cout << quarters << " quarter(s) " << dimes << " dime(s) and " << pennys << " pennys";
-        if (quarters == 0 && dimes > 0 && pennys > 0) 
+        if (quarters == 0 && dimes > 0 && pennys > 0)
 		cout << dimes << " dime(s) and " << pennys << " pennys";
-        if (quarters == 0 && dimes == 0 && pennys > 0) 
+        if (quarters == 0 && dimes == 0 && pennys > 0)
 		cout << pennys << " pennys";
-  	if (quarters > 0 && dimes == 0 && pennys > 0) 
+  	if (quarters > 0 && dimes == 0 && pennys > 0)
 		cout << quarters << " quarter(s) and " << pennys << " pennys";
 	if (quarters > 0 && dimes > 0 && pennys == 0)
-		cout << quarters << " quarter(s) " << dimes << " and dime(s)"; 
-	cout << endl;	
+		cout << quarters << " quarter(s) " << dimes << " and dime(s)";
+	cout << endl;
 }
-
-
